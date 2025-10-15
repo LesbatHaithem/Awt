@@ -47,6 +47,7 @@ It serves as an introduction to desktop interface development in Java, without r
 
 ## 📂 Project Structure
 
+```
 AWTApp/
 │
 ├── src/
@@ -54,9 +55,7 @@ AWTApp/
 │ └── MainFrame.java
 │
 └── README.md
-
-yaml
-
+```
 ---
 
 ## ⚙️ Installation & Setup
