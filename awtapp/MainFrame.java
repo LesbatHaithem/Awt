@@ -1,5 +1,6 @@
 package awtapp ;
 import java.awt.* ;
+import java.awt.event.* ;
 // import java.awt.Panel ;
 // import java.awt.Button ;
 // import java.awt.event.* ;
@@ -24,6 +25,9 @@ public class MainFrame extends Frame  {
         this .setSize(400, 300) ;
         lbl = new Label("Hello AWT") ;
         p .add(lbl) ;  
+        //to set the size of the label
+        // lbl .setSize(300, 20) ;
+        // lbl .setAlignment(Label.CENTER) ;
 
 
         Button b = new Button("Click Me") ;
@@ -32,16 +36,17 @@ public class MainFrame extends Frame  {
         // b .addActionListener(new MyActionListener()) ;
         
         // lambda expression to handle button click event and optimize the code
-        b.addActionListener((e)->{ lbl.setText("Button Clicked");}) ;
+        b.addActionListener((e)->{ lbl.setText("Button Clicked");System.out.println("Button Clicked");
+}) ;
 
 
         Button c = new Button("Cancel") ;
         p .add(c) ;    //another action listener for cancel button
 
         // another way to add action listener without implementing the interface with using anonymous class
-        c .addActionListener(new java.awt.event.ActionListener() {
+        c .addActionListener(new ActionListener() {
             @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
+            public void actionPerformed(ActionEvent e) {
                 lbl.setText("Cancel Button Clicked");
                 System.out.println("Cancel Button Clicked");
                 e.getSource();
@@ -66,8 +71,8 @@ public class MainFrame extends Frame  {
 
         
         // make the window exit
-        this .addWindowListener(new java.awt.event.WindowAdapter() {
-            public void windowClosing(java.awt.event.WindowEvent e) {
+        this .addWindowListener(new WindowAdapter() {
+            public void windowClosing( WindowEvent e) {
 
                 System.exit(0);
             }
